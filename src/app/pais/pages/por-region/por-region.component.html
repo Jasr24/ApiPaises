@@ -1,0 +1,29 @@
+<!-- Pay para activar camelcase | titlecase -->
+<div class="animate__animated animate__fadeIn animate_faster">
+    <h3>Buscar por región <small>{{regionActiva | titlecase}}</small></h3>
+    <hr/>    
+    
+    <h5>Selecciones la region</h5>
+    <!-- ngClass, class, [class.condicion] -->
+    
+    <div class="row">
+        <div class="col">
+            <!-- [class.abc]="region === regionActiva" -->
+            <!-- [ngClass]="{
+                'btn-primary': regionActiva === region,
+                'btn-outline-primary': regionActiva !== region
+            }" -->
+            <button *ngFor="let region of regiones"
+                    [class] = "getClaseCss(region)"
+                    (click)="activarRegion(region)">
+                {{region | titlecase}}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="regionActiva">
+    <div class="col">
+        <app-pais-tabla [paises]="paises" ></app-pais-tabla>
+    </div>
+</div>

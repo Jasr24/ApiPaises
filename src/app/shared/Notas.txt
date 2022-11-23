@@ -1,0 +1,2 @@
+Este modulo shared, es reutilizable para toda la aplicacion aqui podremos
+tener por ejemplo un navBar, un footer, un sidebar, menu entre otros
